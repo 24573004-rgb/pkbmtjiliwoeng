@@ -399,6 +399,22 @@
     }
     .toast.show { transform: translateY(0); opacity: 1; }
 
+
+    /* ── PENGUMUMAN ── */
+    #pengumuman { background: var(--cream); }
+    .pengumuman-list { display:flex; flex-direction:column; gap:1rem; }
+    .pengumuman-card { background:var(--white); border-radius:var(--radius-lg); padding:1.5rem 1.8rem; border:1px solid var(--cream-dark); border-left:4px solid var(--green-mid); transition:all 0.2s; }
+    .pengumuman-card:hover { box-shadow:0 4px 20px rgba(0,0,0,0.07); }
+    .pengumuman-card.penting { border-left-color: var(--gold); }
+    .p-top { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; margin-bottom:0.5rem; }
+    .p-title-wrap { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+    .p-badge { display:inline-block; background:#e8f5ed; color:var(--green-mid); font-size:11px; font-weight:700; padding:3px 10px; border-radius:20px; text-transform:uppercase; }
+    .p-title { font-size:17px; font-weight:600; color:var(--text-dark); }
+    .p-date { font-size:12px; color:var(--text-light); white-space:nowrap; }
+    .p-body { color:var(--text-mid); font-size:14px; line-height:1.7; }
+    .empty-state { text-align:center; padding:4rem 2rem; color:var(--text-light); }
+    .empty-state .empty-icon { font-size:48px; margin-bottom:1rem; display:block; }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -476,6 +492,7 @@
     <li><a href="#program">Program</a></li>
     <li><a href="#galeri">Galeri</a></li>
     <li><a href="#kontak">Kontak</a></li>
+    <li><a href="#pengumuman">Pengumuman</a></li>
     <li><a href="#pendaftaran" class="nav-cta">Daftar Sekarang</a></li>
   </ul>
 </nav>
@@ -834,6 +851,17 @@
   </div>
 </section>
 
+
+<!-- PENGUMUMAN -->
+<section id="pengumuman">
+  <div class="section-inner">
+    <p class="section-label">Info Terkini</p>
+    <h2 class="section-title">Pengumuman</h2>
+    <p class="section-desc">Informasi dan pengumuman terbaru dari PKBM Tjiliwoeng.</p>
+    <div class="pengumuman-list" id="pengumuman-list" style="margin-top:2rem;"></div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <p>© 2026 <span>PKBM Tjiliwoeng</span>. Hak cipta dilindungi. Dibuat dengan ❤️ untuk pendidikan Indonesia.</p>
@@ -888,42 +916,6 @@ Alamat: ${alamat}`;
 
   alert('Form berhasil dikirim!');
 }
-
-// ── PENGUMUMAN ──
-// Untuk tambah pengumuman: tambah objek baru di dalam array ini
-const DAFTAR_PENGUMUMAN = [
-  {
-    id: 1,
-    judul: 'Wisuda',
-    isi: 'PKBM Tjiliwoeng akan mengadakan wisuda pada tanggal 20 Desember 2026. Peserta diwajibkan hadir tepat waktu.',
-    kategori: 'Kegiatan',
-    tanggal: '20 Des 2026'
-  },
-  // Contoh tambah pengumuman baru:
-  // { id: 2, judul: 'Judul', isi: 'Isi pengumuman...', kategori: 'Umum', tanggal: '18 Mei 2026' },
-];
-
-function renderPengumuman() {
-  const list = document.getElementById('pengumuman-list');
-  if (!list) return;
-  if (!DAFTAR_PENGUMUMAN || DAFTAR_PENGUMUMAN.length === 0) {
-    list.innerHTML = '<div class="empty-state"><div class="empty-icon">📭</div><p>Belum ada pengumuman saat ini.</p></div>';
-    return;
-  }
-  list.innerHTML = DAFTAR_PENGUMUMAN.slice().reverse().map(p => `
-    <div class="pengumuman-card ${p.kategori === 'Penting' ? 'penting' : ''}">
-      <div class="p-top">
-        <div class="p-title-wrap">
-          <span class="p-badge">${p.kategori || 'Umum'}</span>
-          <span class="p-title">${p.judul}</span>
-        </div>
-        <span class="p-date">📅 ${p.tanggal || ''}</span>
-      </div>
-      <p class="p-body">${p.isi}</p>
-    </div>
-  `).join('');
-}
-renderPengumuman();
 
 /* =========================
    LIGHTBOX GALLERY
@@ -1003,6 +995,43 @@ function changeSlide(direction) {
   document.getElementById("lightbox-img").src =
     currentGallery[currentIndex];
 }
+
+
+// ── PENGUMUMAN ──
+// Untuk tambah pengumuman: tambah objek baru di dalam array ini
+const DAFTAR_PENGUMUMAN = [
+  {
+    id: 1,
+    judul: '',
+    isi: '',
+    kategori: '',
+    tanggal: ''
+  },
+  // Tambah pengumuman baru di sini:
+  // { id: 2, judul: 'Judul', isi: 'Isi pengumuman...', kategori: 'Umum', tanggal: '18 Mei 2026' },
+];
+
+function renderPengumuman() {
+  const list = document.getElementById('pengumuman-list');
+  if (!list) return;
+  if (!DAFTAR_PENGUMUMAN || DAFTAR_PENGUMUMAN.length === 0) {
+    list.innerHTML = '<div class="empty-state"><span class="empty-icon">📭</span><p>Belum ada pengumuman saat ini.</p></div>';
+    return;
+  }
+  list.innerHTML = DAFTAR_PENGUMUMAN.slice().reverse().map(p => `
+    <div class="pengumuman-card ${p.kategori === 'Penting' ? 'penting' : ''}">
+      <div class="p-top">
+        <div class="p-title-wrap">
+          <span class="p-badge">${p.kategori || 'Umum'}</span>
+          <span class="p-title">${p.judul}</span>
+        </div>
+        <span class="p-date">📅 ${p.tanggal || ''}</span>
+      </div>
+      <p class="p-body">${p.isi}</p>
+    </div>
+  `).join('');
+}
+renderPengumuman();
 
 </script>
 <!-- LIGHTBOX -->
