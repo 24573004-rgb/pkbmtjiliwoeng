@@ -399,45 +399,6 @@
     }
     .toast.show { transform: translateY(0); opacity: 1; }
 
-
-    /* ── PENGUMUMAN ── */
-    #pengumuman { background: var(--cream); }
-    .pengumuman-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:2rem; flex-wrap:wrap; gap:1rem; }
-    .btn-tambah { background:var(--green-dark); color:var(--white); border:none; padding:10px 20px; border-radius:var(--radius); font-family:'DM Sans',sans-serif; font-size:14px; font-weight:600; cursor:pointer; transition:all 0.2s; display:flex; align-items:center; gap:8px; }
-    .btn-tambah:hover { background:var(--green-mid); transform:translateY(-1px); }
-    .pengumuman-list { display:flex; flex-direction:column; gap:1rem; }
-    .pengumuman-card { background:var(--white); border-radius:var(--radius-lg); padding:1.5rem 1.8rem; border:1px solid var(--cream-dark); border-left:4px solid var(--green-mid); position:relative; transition:all 0.2s; }
-    .pengumuman-card:hover { box-shadow:0 4px 20px rgba(0,0,0,0.07); }
-    .pengumuman-card.penting { border-left-color: var(--gold); }
-    .pengumuman-card.penting .p-badge { background:#fef3cd; color:#7a5c1a; }
-    .p-top { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; margin-bottom:0.5rem; }
-    .p-title-wrap { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
-    .p-badge { display:inline-block; background:#e8f5ed; color:var(--green-mid); font-size:11px; font-weight:700; padding:3px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:0.5px; }
-    .p-title { font-size:17px; font-weight:600; color:var(--text-dark); }
-    .p-date { font-size:12px; color:var(--text-light); white-space:nowrap; }
-    .p-body { color:var(--text-mid); font-size:14px; line-height:1.7; }
-    .p-actions { display:flex; gap:8px; margin-top:0; }
-    .btn-hapus { background:none; border:1px solid #fca5a5; color:#dc2626; padding:4px 12px; border-radius:6px; font-size:12px; font-weight:600; cursor:pointer; transition:all 0.2s; font-family:'DM Sans',sans-serif; }
-    .btn-hapus:hover { background:#fee2e2; }
-    .empty-state { text-align:center; padding:4rem 2rem; color:var(--text-light); }
-    .empty-state .empty-icon { font-size:48px; margin-bottom:1rem; }
-    .empty-state p { font-size:15px; }
-
-    /* MODAL */
-    .modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:9998; display:none; align-items:center; justify-content:center; padding:1rem; }
-    .modal-overlay.active { display:flex; }
-    .modal { background:var(--white); border-radius:var(--radius-lg); padding:2rem; width:100%; max-width:500px; position:relative; }
-    .modal h3 { font-size:18px; font-weight:600; color:var(--text-dark); margin-bottom:1.5rem; }
-    .modal .form-group { margin-bottom:1rem; }
-    .modal label { display:block; font-size:13px; font-weight:600; color:var(--text-mid); margin-bottom:6px; }
-    .modal input, .modal select, .modal textarea { width:100%; border:1.5px solid var(--cream-dark); border-radius:8px; padding:10px 12px; font-family:'DM Sans',sans-serif; font-size:14px; color:var(--text-dark); outline:none; transition:border-color 0.2s; }
-    .modal input:focus, .modal select:focus, .modal textarea:focus { border-color:var(--green-mid); }
-    .modal textarea { resize:vertical; min-height:100px; }
-    .modal-btns { display:flex; gap:10px; margin-top:1.5rem; }
-    .btn-simpan { flex:1; background:var(--green-dark); color:var(--white); border:none; padding:12px; border-radius:var(--radius); font-family:'DM Sans',sans-serif; font-size:15px; font-weight:600; cursor:pointer; transition:all 0.2s; }
-    .btn-simpan:hover { background:var(--green-mid); }
-    .btn-batal { flex:1; background:var(--cream); color:var(--text-mid); border:1px solid var(--cream-dark); padding:12px; border-radius:var(--radius); font-family:'DM Sans',sans-serif; font-size:15px; font-weight:600; cursor:pointer; }
-
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -515,7 +476,6 @@
     <li><a href="#program">Program</a></li>
     <li><a href="#galeri">Galeri</a></li>
     <li><a href="#kontak">Kontak</a></li>
-    <li><a href="#pengumuman">Pengumuman</a></li>
     <li><a href="#pendaftaran" class="nav-cta">Daftar Sekarang</a></li>
   </ul>
 </nav>
@@ -874,52 +834,6 @@
   </div>
 </section>
 
-
-<!-- PENGUMUMAN -->
-<section id="pengumuman">
-  <div class="section-inner">
-    <div class="pengumuman-header">
-      <div>
-        <p class="section-label">Info Terkini</p>
-        <h2 class="section-title">Pengumuman</h2>
-      </div>
-      <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSNFtGiRqal4NYMTaoJNEHXITx8fgVEOgcOU2GAJ7STbj2YgTTd0lqQLK4_8SfdmG9t6MIfMkAeutcr/pub" target="_blank" style="background:var(--green-dark);color:var(--white);border:none;padding:10px 20px;border-radius:var(--radius);font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;">✏️ Edit di Google Sheets</a>
-    </div>
-    <div class="pengumuman-list" id="pengumuman-list">
-      <!-- Diisi otomatis oleh JavaScript -->
-    </div>
-  </div>
-</section>
-
-<!-- MODAL TAMBAH PENGUMUMAN -->
-<div class="modal-overlay" id="modal-overlay">
-  <div class="modal">
-    <h3>📢 Tambah Pengumuman</h3>
-    <div class="form-group">
-      <label>Judul Pengumuman *</label>
-      <input type="text" id="p-judul" placeholder="contoh: Jadwal Ujian Paket C 2026" />
-    </div>
-    <div class="form-group">
-      <label>Isi Pengumuman *</label>
-      <textarea id="p-isi" placeholder="Tulis isi pengumuman di sini..."></textarea>
-    </div>
-    <div class="form-group">
-      <label>Kategori</label>
-      <select id="p-kategori">
-        <option value="Umum">Umum</option>
-        <option value="Penting">⚠️ Penting</option>
-        <option value="Ujian">Ujian</option>
-        <option value="Kegiatan">Kegiatan</option>
-        <option value="Libur">Libur</option>
-      </select>
-    </div>
-    <div class="modal-btns">
-      <button class="btn-batal" onclick="tutupModal()">Batal</button>
-      <button class="btn-simpan" onclick="simpanPengumuman()">Simpan</button>
-    </div>
-  </div>
-</div>
-
 <!-- FOOTER -->
 <footer>
   <p>© 2026 <span>PKBM Tjiliwoeng</span>. Hak cipta dilindungi. Dibuat dengan ❤️ untuk pendidikan Indonesia.</p>
@@ -974,6 +888,42 @@ Alamat: ${alamat}`;
 
   alert('Form berhasil dikirim!');
 }
+
+// ── PENGUMUMAN ──
+// Untuk tambah pengumuman: tambah objek baru di dalam array ini
+const DAFTAR_PENGUMUMAN = [
+  {
+    id: 1,
+    judul: 'Wisuda',
+    isi: 'PKBM Tjiliwoeng akan mengadakan wisuda pada tanggal 20 Desember 2026. Peserta diwajibkan hadir tepat waktu.',
+    kategori: 'Kegiatan',
+    tanggal: '20 Des 2026'
+  },
+  // Contoh tambah pengumuman baru:
+  // { id: 2, judul: 'Judul', isi: 'Isi pengumuman...', kategori: 'Umum', tanggal: '18 Mei 2026' },
+];
+
+function renderPengumuman() {
+  const list = document.getElementById('pengumuman-list');
+  if (!list) return;
+  if (!DAFTAR_PENGUMUMAN || DAFTAR_PENGUMUMAN.length === 0) {
+    list.innerHTML = '<div class="empty-state"><div class="empty-icon">📭</div><p>Belum ada pengumuman saat ini.</p></div>';
+    return;
+  }
+  list.innerHTML = DAFTAR_PENGUMUMAN.slice().reverse().map(p => `
+    <div class="pengumuman-card ${p.kategori === 'Penting' ? 'penting' : ''}">
+      <div class="p-top">
+        <div class="p-title-wrap">
+          <span class="p-badge">${p.kategori || 'Umum'}</span>
+          <span class="p-title">${p.judul}</span>
+        </div>
+        <span class="p-date">📅 ${p.tanggal || ''}</span>
+      </div>
+      <p class="p-body">${p.isi}</p>
+    </div>
+  `).join('');
+}
+renderPengumuman();
 
 /* =========================
    LIGHTBOX GALLERY
