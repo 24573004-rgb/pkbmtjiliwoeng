@@ -10,13 +10,13 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --green-dark: #1a4a2e;
-      --green-mid: #2d7a4f;
-      --green-light: #4caf78;
-      --gold: #c9a84c;
-      --gold-light: #f0d87a;
-      --cream: #fdf8f0;
-      --cream-dark: #f0e8d8;
+      --green-dark: #0d3b66;
+      --green-mid: #1d6fb8;
+      --green-light: #4a90d9;
+      --gold: #2e86de;
+      --gold-light: #a9cef4;
+      --cream: #ffffff;
+      --cream-dark: #e8f1fb;
       --text-dark: #1a1a1a;
       --text-mid: #4a4a4a;
       --text-light: #7a7a7a;
@@ -37,7 +37,7 @@
     /* ── NAVBAR ── */
     nav {
       position: fixed; top: 0; width: 100%; z-index: 999;
-      background: rgba(26,74,46,0.96);
+      background: rgba(13,59,102,0.96);
       backdrop-filter: blur(8px);
       padding: 0 2rem;
       display: flex; align-items: center; justify-content: space-between;
@@ -70,7 +70,7 @@
     /* ── HERO ── */
     #beranda {
       min-height: 100vh;
-      background: linear-gradient(135deg, #1a4a2e 0%, #2d7a4f 50%, #1a4a2e 100%);
+      background: linear-gradient(135deg, #0d3b66 0%, #1d6fb8 50%, #0d3b66 100%);
       display: flex; align-items: center;
       padding: 80px 2rem 60px;
       position: relative; overflow: hidden;
@@ -80,7 +80,7 @@
       position: absolute; top: -100px; right: -100px;
       width: 500px; height: 500px;
       border-radius: 50%;
-      background: rgba(201,168,76,0.08);
+      background: rgba(46,134,222,0.08);
     }
     #beranda::after {
       content: '';
@@ -96,7 +96,7 @@
     }
     .hero-badge {
       display: inline-block;
-      background: rgba(201,168,76,0.2); border: 1px solid rgba(201,168,76,0.4);
+      background: rgba(46,134,222,0.2); border: 1px solid rgba(46,134,222,0.4);
       color: var(--gold-light); font-size: 12px; font-weight: 600;
       padding: 6px 14px; border-radius: 20px; letter-spacing: 1px;
       text-transform: uppercase; margin-bottom: 1.5rem;
@@ -211,7 +211,7 @@
     .program-card p { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
     .prog-tag {
       display: inline-block; margin-top: 1rem;
-      background: #e8f5ed; color: var(--green-mid);
+      background: #e8f1fb; color: var(--green-mid);
       font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 20px;
     }
 
@@ -272,11 +272,11 @@
       font-size: 32px;
     }
     .galeri-placeholder span { font-size: 13px; font-weight: 500; }
-    .galeri-item:nth-child(1) .galeri-placeholder { background: #d4e8dc; color: var(--green-dark); }
-    .galeri-item:nth-child(2) .galeri-placeholder { background: #f0e5c8; color: #7a5c1a; }
-    .galeri-item:nth-child(3) .galeri-placeholder { background: #d8e8f8; color: #1a4a7a; }
-    .galeri-item:nth-child(4) .galeri-placeholder { background: #f8d8d8; color: #7a1a1a; }
-    .galeri-item:nth-child(5) .galeri-placeholder { background: #e8d8f8; color: #4a1a7a; }
+    .galeri-item:nth-child(1) .galeri-placeholder { background: #d6e6f7; color: var(--green-dark); }
+    .galeri-item:nth-child(2) .galeri-placeholder { background: #dbe9f9; color: #14508c; }
+    .galeri-item:nth-child(3) .galeri-placeholder { background: #cfe3fa; color: #1a4a7a; }
+    .galeri-item:nth-child(4) .galeri-placeholder { background: #d8e3f5; color: #163f6e; }
+    .galeri-item:nth-child(5) .galeri-placeholder { background: #d0e0f7; color: #103766; }
     .galeri-caption {
       font-size: 13px; color: var(--text-mid); text-align: center; margin-top: 1rem;
       font-style: italic;
@@ -382,7 +382,7 @@
 
     /* ── FOOTER ── */
     footer {
-      background: #0f2d1c; color: rgba(255,255,255,0.6);
+      background: #082644; color: rgba(255,255,255,0.6);
       text-align: center; padding: 1.5rem 2rem; font-size: 13px;
     }
     footer span { color: var(--gold-light); }
@@ -408,7 +408,7 @@
     .pengumuman-card.penting { border-left-color: var(--gold); }
     .p-top { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; margin-bottom:0.5rem; }
     .p-title-wrap { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
-    .p-badge { display:inline-block; background:#e8f5ed; color:var(--green-mid); font-size:11px; font-weight:700; padding:3px 10px; border-radius:20px; text-transform:uppercase; }
+    .p-badge { display:inline-block; background:#e8f1fb; color:var(--green-mid); font-size:11px; font-weight:700; padding:3px 10px; border-radius:20px; text-transform:uppercase; }
     .p-title { font-size:17px; font-weight:600; color:var(--text-dark); }
     .p-date { font-size:12px; color:var(--text-light); white-space:nowrap; }
     .p-body { color:var(--text-mid); font-size:14px; line-height:1.7; }
@@ -1001,11 +1001,11 @@ function changeSlide(direction) {
 // Untuk tambah pengumuman: tambah objek baru di dalam array ini
 const DAFTAR_PENGUMUMAN = [
   {
-    id: 1,
-    judul: 'WISUDA 2026',
-    isi: 'PKBM Tjiliwoeng akan mengadakan wisuda pada tanggal 15 Juni 2026 pukul 10.00 WIB yang berlokasi di Hotel Ballroom Balairung lt.3 . Peserta diwajibkan hadir tepat waktu.',
-    kategori: 'Kegiatan Penting',
-    tanggal: 'Senin, 15 Juni 2026'
+    id: 
+    judul:
+    isi: 
+    kategori: 
+    tanggal: 
   },
   // Tambah pengumuman baru di sini:
   // { id: 2, judul: 'Judul', isi: 'Isi pengumuman...', kategori: 'Umum', tanggal: '18 Mei 2026' },
